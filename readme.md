@@ -1,1 +1,1 @@
-Learning React in 30 days
+learning React in 30 days
