@@ -5,7 +5,14 @@
   text-align: center;
 }
 
-
 .read-the-docs {
   color: #888;
+}
+#container {
+  margin: 0 auto;
+  height: 400px;
+  width: 400px;
+  color: blue;
+  background-color:white;
+  border-radius:15px;
 }

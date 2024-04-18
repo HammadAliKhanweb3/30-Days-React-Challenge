@@ -17,7 +17,9 @@ function App() {
   };
   return (
     <>
+    <div id="container">
       <h1>Counter</h1>
+      
       <h2>Counter Value :{count} </h2>
       <button type="submit" onClick={addValue}>
         add Value
@@ -27,6 +29,7 @@ function App() {
       <button type="submit" onClick={removeValue}>
         remove Value
       </button>
+    </div>
     </>);
 }
 export default App;
