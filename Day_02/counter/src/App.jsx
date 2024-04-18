@@ -19,7 +19,6 @@ function App() {
     <>
     <div id="container">
       <h1>Counter</h1>
-      
       <h2>Counter Value :{count} </h2>
       <button type="submit" onClick={addValue}>
         add Value
