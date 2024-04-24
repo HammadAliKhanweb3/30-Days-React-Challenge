@@ -9,15 +9,8 @@ function useCurrencyInfo(currency) {
     )
       .then((res) => res.json())
       .then((res) => {
-        if (res.result === "success") {
-          setData(res.conversion_rates);
-        } else {
-          console.error("Failed to fetch currency data:", res.error);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching currency data:", error);
-      });
+          setData(res['conversion_rates']);
+  });
   }, [currency]);
 
   return data;
