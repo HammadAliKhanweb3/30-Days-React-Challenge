@@ -13,9 +13,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <Home />
-        </>
-      ),
+          <Home /></>),
     },
     {
       path: "/login",
@@ -23,33 +21,21 @@ function App() {
         <>
           <Navbar />
           <Login />
-        </>
-      ),
-    },
+        </> ),},
     {
       path: "/about",
       element: (
         <>
           <Navbar />
-          <About />
-        </>
-      ),
-    },
+          <About /></> ),},
     {
       path: "/user/:username",
       element: (
         <>
           <Navbar />
-          <User />
-        </>
-      ),
-    },
-  ]);
+          <User /></>),},]);
   return (
     <>
       <RouterProvider router={router} />
-    </>
-  );
-}
-
+    </> );}
 export default App;
