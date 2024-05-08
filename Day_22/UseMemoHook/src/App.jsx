@@ -14,7 +14,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [numbers, setNumbers] = useState(num);
 
-  const magical = useMemo(()=>numbers.find((item) => item.MagicalNumber),[numbers]); // Expensive Value
+  const magical = useMemo(()=>numbers.find((item) => item.MagicalNumber),[num]); // Expensive Value
 
   return (
     <>
@@ -44,6 +44,3 @@ function App() {
 }
 
 export default App;
-
-
-
