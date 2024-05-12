@@ -1,54 +1,43 @@
-import { useReducer, useState } from "react";
-import Todo from "./Todo";
-import "./App.css";
+import React, { useReducer, useState } from "react";
 
-export const Actions = {
-  ADD_TODO: "ADD_TODO",
-  TOGGLE_TODO: "TOGGLE_TODO",
-  DELETE_TODO: "DELETE_TODO",
+export const ACTIONS = {
+  ADD_TODO: "addTodo",
 };
+
 function reducer(todos, action) {
   switch (action.type) {
-    case Actions.ADD_TODO:
+    case ACTIONS.ADD_TODO:
       return [...todos, newTodo(action.payload.name)];
-    case Actions.TOGGLE_TODO:
-      return todos.map((todo) =>
-        todo.id === action.payload.id
-          ? { ...todo, complete: !todo.complete }
-          : todo
-      );
-    case Actions.DELETE_TODO:
-      return todos.filter((todo) => todo.id !== action.payload.id);
-    default:
-      return todos;
   }
 }
+
 function newTodo(name) {
-  return { id: Date.now(), name: name, complete: false };
+  return { id: Date.now(), name: name, completed: false };
 }
+
 function App() {
   const [todos, dispatch] = useReducer(reducer, []);
   const [name, setName] = useState("");
-  function handleSubmit(event) {
-    event.preventDefault();
-    dispatch({ type: Actions.ADD_TODO, payload: { name: name } });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch({ type: ACTIONS.ADD_TODO, payload: { name: name } });
     setName("");
   }
+  console.log(todos);
+
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Enter todo"
-        />
-        <button type="submit">Add Todo</button>
+          placeholder="Enter your Todo"
+        ></input>
       </form>
-      {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} dispatch={dispatch} />
-      ))}
-    </>
+    </div>
   );
 }
+
 export default App;

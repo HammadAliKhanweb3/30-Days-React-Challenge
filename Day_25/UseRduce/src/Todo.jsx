@@ -7,6 +7,7 @@ function Todo({ todo, dispatch }) {
       <span style={{ color: todo.complete ? "#AAA" : "#000" }}>
         {todo.name}
       </span>
+
       <button
         onClick={() =>
           dispatch({ type: Actions.TOGGLE_TODO, payload: { id: todo.id } })
@@ -14,9 +15,10 @@ function Todo({ todo, dispatch }) {
       >
         Toggle
       </button>
+
       <button
         onClick={() =>
-          dispatch({ type: Actions.TOGGLE_TODO, payload: { id: todo.id } })
+          dispatch({ type: Actions.DELETE_TODO, payload: { id: todo.id } })
         }
       >
         Delete
@@ -26,3 +28,4 @@ function Todo({ todo, dispatch }) {
 }
 
 export default Todo;
+r
